@@ -1,6 +1,4 @@
 spring:
-  main:
-    allow-bean-definition-overriding: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${URL}
@@ -10,10 +8,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
   jackson:
     property-naming-strategy : SNAKE_CASE
-
   jwt :
     key : ${JWT_KEY}
     live :
