@@ -40,7 +40,7 @@ public class JwtProvider {
     }
 
     public TokenResponse getToken(User user) {
-        String accessToken = generateAccessToken(user.getEmail());
+        String accessToken = generateAccessToken(user.getUserEmail());
 
         return new TokenResponse(accessToken, accessTokenTime);
     }
