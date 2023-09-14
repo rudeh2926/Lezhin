@@ -5,13 +5,13 @@ import com.example.lezhin.domain.webToon.domain.WebToon;
 import com.example.lezhin.global.entity.BaseEntity;
 import lombok.*;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
 public class DisLike extends BaseEntity {
 
     @ManyToOne
