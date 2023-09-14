@@ -1,9 +1,7 @@
 package com.example.lezhin.domain.like.service;
 
-import com.example.lezhin.domain.disLike.domain.DisLike;
 import com.example.lezhin.domain.disLike.facade.DisLikeFacade;
 import com.example.lezhin.domain.like.domain.Like;
-import com.example.lezhin.domain.disLike.domain.repository.DisLikeRepository;
 import com.example.lezhin.domain.like.domain.repository.LikeRepository;
 import com.example.lezhin.domain.like.exception.LikeExistException;
 import com.example.lezhin.domain.like.facade.LikeFacade;

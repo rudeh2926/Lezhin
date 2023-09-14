@@ -1,6 +1,5 @@
 package com.example.lezhin.domain.like.service;
 
-import com.example.lezhin.domain.like.domain.Like;
 import com.example.lezhin.domain.like.facade.LikeFacade;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
@@ -9,8 +8,6 @@ import com.example.lezhin.domain.webToon.facade.WebToonFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
