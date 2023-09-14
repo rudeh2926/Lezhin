@@ -15,7 +15,7 @@ public class DisLikeFacade {
 
     private final DisLikeRepository disLikeRepository;
 
-    public Optional<DisLike> hasUserGivenLikeToWebToon(User user, WebToon webToon) {
+    public boolean hasUserGivenLikeToWebToon(User user, WebToon webToon) {
         return disLikeRepository.hasUserGivenDisLikeToWebToon(user, webToon);
     }
 }

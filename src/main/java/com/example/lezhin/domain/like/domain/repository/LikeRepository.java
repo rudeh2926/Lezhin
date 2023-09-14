@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface LikeRepository extends CrudRepository<Like, Long> {
-    Optional<Like> hasUserGivenLikeToWebToon(User user, WebToon webToon);
+    boolean hasUserGivenLikeToWebToon(User user, WebToon webToon);
 }

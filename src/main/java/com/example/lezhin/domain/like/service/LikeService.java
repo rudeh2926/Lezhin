@@ -1,10 +1,12 @@
 package com.example.lezhin.domain.like.service;
 
 import com.example.lezhin.domain.disLike.domain.DisLike;
+import com.example.lezhin.domain.disLike.facade.DisLikeFacade;
 import com.example.lezhin.domain.like.domain.Like;
 import com.example.lezhin.domain.disLike.domain.repository.DisLikeRepository;
 import com.example.lezhin.domain.like.domain.repository.LikeRepository;
 import com.example.lezhin.domain.like.exception.LikeExistException;
+import com.example.lezhin.domain.like.facade.LikeFacade;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.webToon.domain.WebToon;
@@ -13,7 +15,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +22,8 @@ public class LikeService {
 
     private final UserFacade userFacade;
     private final WebToonFacade webToonFacade;
-    private final DisLikeRepository disLikeRepository;
+    private final LikeFacade likeFacade;
+    private final DisLikeFacade disLikeFacade;
     private final LikeRepository likeRepository;
 
     @Transactional
@@ -31,13 +33,11 @@ public class LikeService {
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
 
-        if (likeRepository.hasUserGivenLikeToWebToon(user,webToon).isPresent()) {
+        if (likeFacade.hasUserGivenLikeToWebToon(user,webToon)) {
             throw LikeExistException.EXCEPTION;
         }
 
-        Optional<DisLike> existDisLike = disLikeRepository.hasUserGivenDisLikeToWebToon(user, webToon);
-        if (existDisLike.isPresent()) {
-            disLikeRepository.delete(existDisLike.get());
+        if (disLikeFacade.hasUserGivenLikeToWebToon(user, webToon)) {
             webToon.minusDisLikeCounts();
         }
 

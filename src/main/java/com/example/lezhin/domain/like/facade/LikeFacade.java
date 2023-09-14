@@ -15,7 +15,7 @@ public class LikeFacade {
 
     private final LikeRepository likeRepository;
 
-    public Optional<Like> hasUserGivenLikeToWebToon(User user, WebToon webToon) {
+    public boolean hasUserGivenLikeToWebToon(User user, WebToon webToon) {
        return likeRepository.hasUserGivenLikeToWebToon(user, webToon);
     }
 }

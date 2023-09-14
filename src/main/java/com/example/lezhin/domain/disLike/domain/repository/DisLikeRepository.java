@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface DisLikeRepository extends CrudRepository<DisLike, Long> {
-    Optional<DisLike> hasUserGivenDisLikeToWebToon(User user, WebToon webToon);
+    boolean hasUserGivenDisLikeToWebToon(User user, WebToon webToon);
 }

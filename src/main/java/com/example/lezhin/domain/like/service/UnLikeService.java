@@ -25,7 +25,7 @@ public class UnLikeService {
 
         User user = userFacade.getCurrentUser();
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
-        Optional<Like> like = likeFacade.hasUserGivenLikeToWebToon(user, webToon);
+        boolean like = likeFacade.hasUserGivenLikeToWebToon(user, webToon);
 
         webToon.minusLikeCounts();
     }
