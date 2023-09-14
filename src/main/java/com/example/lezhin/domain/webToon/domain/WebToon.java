@@ -39,4 +39,20 @@ public class WebToon extends BaseEntity {
         this.paidType = paidType;
         this.price = price;
     }
+
+    public void minusDisLikeCounts() {
+        this.disLikeCounts--;
+    }
+
+    public void addDisLikeCounts() {
+        this.disLikeCounts++;
+    }
+
+    public void minusLikeCounts() {
+        this.likeCounts--;
+    }
+
+    public void addLikeCounts() {
+        this.likeCounts++;
+    }
 }
