@@ -1,6 +1,6 @@
-package com.example.lezhin.domain.like.service;
+package com.example.lezhin.domain.disLike.service;
 
-import com.example.lezhin.domain.like.facade.LikeFacade;
+import com.example.lezhin.domain.disLike.facade.DisLikeFacade;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.webToon.domain.WebToon;
@@ -11,19 +11,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UnLikeService {
+public class UnDisLikeService {
 
-    private final LikeFacade likeFacade;
     private final UserFacade userFacade;
     private final WebToonFacade webToonFacade;
+    private final DisLikeFacade disLikeFacade;
 
     @Transactional
-    public void unLikeService(Long webToonId) {
+    public void unDisLike(Long webToonId) {
 
         User user = userFacade.getCurrentUser();
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
-        likeFacade.hasUserGivenLikeToWebToon(user, webToon);
-        webToon.minusLikeCounts();
+        disLikeFacade.hasUserGivenLikeToWebToon(user, webToon);
+        webToon.minusDisLikeCounts();;
     }
+
 }
