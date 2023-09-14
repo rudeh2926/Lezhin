@@ -11,6 +11,7 @@ import com.example.lezhin.domain.webToon.domain.WebToon;
 import com.example.lezhin.domain.webToon.facade.WebToonFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ public class LikeService {
     private final DisLikeRepository disLikeRepository;
     private final LikeRepository likeRepository;
 
+    @Transactional
     public void like(Long webToonId) {
 
         User user = userFacade.getCurrentUser();
