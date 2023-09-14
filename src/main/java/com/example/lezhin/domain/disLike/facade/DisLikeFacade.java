@@ -1,7 +1,7 @@
-package com.example.lezhin.domain.like.facade;
+package com.example.lezhin.domain.disLike.facade;
 
-import com.example.lezhin.domain.like.domain.DisLike;
-import com.example.lezhin.domain.like.domain.repository.DisLikeRepository;
+import com.example.lezhin.domain.disLike.domain.DisLike;
+import com.example.lezhin.domain.disLike.domain.repository.DisLikeRepository;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.webToon.domain.WebToon;
 import lombok.RequiredArgsConstructor;

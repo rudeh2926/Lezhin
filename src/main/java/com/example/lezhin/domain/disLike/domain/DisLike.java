@@ -1,4 +1,4 @@
-package com.example.lezhin.domain.like.domain;
+package com.example.lezhin.domain.disLike.domain;
 
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.webToon.domain.WebToon;
