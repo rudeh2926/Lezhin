@@ -14,6 +14,9 @@ public enum ErrorCode {
 
     WEBTOON_NOT_FOUND(404, "WebToon Not Found"),
 
+    LIKE_EXISTS(409, "Star Exists"),
+    DISLIKE_EXISTS(409, "DisLike Exists"),
+
     JWT_EXPIRED(401, "Jwt Expired"),
     JWT_INVALID(401, "Jwt Invalid"),
 
