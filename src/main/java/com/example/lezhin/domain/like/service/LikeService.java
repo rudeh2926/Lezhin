@@ -4,7 +4,6 @@ import com.example.lezhin.domain.disLike.facade.DisLikeFacade;
 import com.example.lezhin.domain.like.domain.Like;
 import com.example.lezhin.domain.like.domain.repository.LikeRepository;
 import com.example.lezhin.domain.like.exception.LikeExistException;
-import com.example.lezhin.domain.like.facade.LikeFacade;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.webToon.domain.WebToon;
@@ -20,7 +19,6 @@ public class LikeService {
 
     private final UserFacade userFacade;
     private final WebToonFacade webToonFacade;
-    private final LikeFacade likeFacade;
     private final DisLikeFacade disLikeFacade;
     private final LikeRepository likeRepository;
 
@@ -31,7 +29,7 @@ public class LikeService {
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
 
-        if (likeFacade.hasUserGivenLikeToWebToon(user,webToon)) {
+        if (likeRepository.hasUserGivenLikeToWebToon(user,webToon)) {
             throw LikeExistException.EXCEPTION;
         }
 
