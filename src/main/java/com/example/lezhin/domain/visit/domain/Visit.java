@@ -6,6 +6,7 @@ import com.example.lezhin.global.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -22,5 +23,7 @@ public class Visit extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "webToon_id")
     private WebToon webToon;
+
+    private LocalDateTime visitDateTime;
 
 }
