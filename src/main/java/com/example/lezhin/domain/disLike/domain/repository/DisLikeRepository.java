@@ -6,5 +6,5 @@ import com.example.lezhin.domain.webToon.domain.WebToon;
 import org.springframework.data.repository.CrudRepository;
 
 public interface DisLikeRepository extends CrudRepository<DisLike, Long> {
-    boolean findUserGivenDisLikeToWebToon(User user, WebToon webToon);
+    boolean findByUserAndWebToon(User user, WebToon webToon);
 }

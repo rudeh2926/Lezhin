@@ -27,7 +27,7 @@ public class DisLikeService {
         User user = userFacade.getCurrentUser();
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
-        if (disLikeRepository.findUserGivenDisLikeToWebToon(user, webToon)) {
+        if (disLikeRepository.findByUserAndWebToon(user, webToon)) {
             throw DisLikeExistException.EXCEPTION;
         }
 

@@ -29,7 +29,7 @@ public class LikeService {
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
 
-        if (likeRepository.findUserGivenLikeToWebToon(user,webToon)) {
+        if (likeRepository.findByUserAndWebToon(user,webToon)) {
             throw LikeExistException.EXCEPTION;
         }
 

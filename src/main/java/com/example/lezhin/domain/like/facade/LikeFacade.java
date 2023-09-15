@@ -13,6 +13,6 @@ public class LikeFacade {
     private final LikeRepository likeRepository;
 
     public boolean hasUserGivenLikeToWebToon(User user, WebToon webToon) {
-       return likeRepository.findUserGivenLikeToWebToon(user, webToon);
+       return likeRepository.findByUserAndWebToon(user, webToon);
     }
 }
