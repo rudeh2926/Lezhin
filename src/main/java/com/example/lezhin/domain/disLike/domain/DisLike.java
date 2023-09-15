@@ -8,6 +8,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter
+@Table(name = "tbl_dislike")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

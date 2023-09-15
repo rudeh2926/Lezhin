@@ -8,6 +8,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter
+@Table(name = "tbl_like")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
