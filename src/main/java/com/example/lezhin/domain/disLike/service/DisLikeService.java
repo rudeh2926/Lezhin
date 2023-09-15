@@ -10,6 +10,7 @@ import com.example.lezhin.domain.webToon.domain.WebToon;
 import com.example.lezhin.domain.webToon.facade.WebToonFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,7 @@ public class DisLikeService {
     private final LikeFacade likeFacade;
     private final DisLikeRepository disLikeRepository;
 
+    @Transactional
     public void disLike(Long webToonId) {
 
         User user = userFacade.getCurrentUser();
