@@ -13,6 +13,6 @@ public class DisLikeFacade {
     private final DisLikeRepository disLikeRepository;
 
     public boolean hasUserGivenLikeToWebToon(User user, WebToon webToon) {
-        return disLikeRepository.hasUserGivenDisLikeToWebToon(user, webToon);
+        return disLikeRepository.findUserGivenDisLikeToWebToon(user, webToon);
     }
 }
