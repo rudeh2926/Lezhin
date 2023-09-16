@@ -22,4 +22,8 @@ public class UserFacade {
         return userRepository.findByUserEmail(email)
                 .orElseThrow(() -> UserEmailNotFoundException.EXCEPTION);
     }
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
 }
