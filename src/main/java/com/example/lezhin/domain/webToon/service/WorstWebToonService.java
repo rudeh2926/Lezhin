@@ -14,22 +14,22 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class BestWebToonService {
+public class WorstWebToonService {
 
     private final UserFacade userFacade;
     private final WebToonRepositoryImp webToonRepositoryImp;
 
     @Transactional(readOnly = true)
-    public List<WebToonResponse> findBestWebToon() {
+    public List<WebToonResponse> findWorstWebToon() {
 
         User user = userFacade.getCurrentUser();
 
-        List<WebToon> findBestWebToon = webToonRepositoryImp.findMostLikedWebtoons();
-        List<WebToonResponse> findBestWebToons = findBestWebToon
+        List<WebToon> findWorstWebToon = webToonRepositoryImp.findMostDisLikedWebtoons();
+        List<WebToonResponse> findWorstWebToons = findWorstWebToon
                 .stream()
                 .map(WebToonResponse::new)
                 .collect(Collectors.toList());
 
-        return findBestWebToons;
+        return findWorstWebToons;
     }
 }

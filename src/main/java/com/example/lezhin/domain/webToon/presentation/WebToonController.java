@@ -18,6 +18,7 @@ public class WebToonController {
     private final WriteWebToonService writeWebToonService;
     private final ModifyPaidService modifyPaidService;
     private final BestWebToonService bestWebToonService;
+    private final WorstWebToonService worstWebToonService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -33,5 +34,10 @@ public class WebToonController {
     @GetMapping("/best")
     public List<WebToonResponse> findBestWebToon() {
         return bestWebToonService.findBestWebToon();
+    }
+
+    @GetMapping("/worst")
+    public List<WebToonResponse> findWorstWevbToon() {
+        return worstWebToonService.findWorstWebToon();
     }
 }
