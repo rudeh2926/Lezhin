@@ -1,7 +1,7 @@
 package com.example.lezhin.domain.user.service;
 
 import com.example.lezhin.domain.user.exception.UserNameOrEmailAlreadyExistException;
-import com.example.lezhin.domain.user.presentation.dto.UserSignupRequest;
+import com.example.lezhin.domain.user.presentation.request.UserSignupRequest;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

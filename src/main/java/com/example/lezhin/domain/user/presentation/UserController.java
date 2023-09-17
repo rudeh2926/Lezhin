@@ -1,6 +1,6 @@
 package com.example.lezhin.domain.user.presentation;
 
-import com.example.lezhin.domain.user.presentation.dto.UserSignupRequest;
+import com.example.lezhin.domain.user.presentation.request.UserSignupRequest;
 import com.example.lezhin.domain.user.service.UserDeleteService;
 import com.example.lezhin.domain.user.service.UserSignupService;
 import lombok.RequiredArgsConstructor;

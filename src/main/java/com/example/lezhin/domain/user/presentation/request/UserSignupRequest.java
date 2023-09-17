@@ -1,4 +1,4 @@
-package com.example.lezhin.domain.user.presentation.dto;
+package com.example.lezhin.domain.user.presentation.request;
 
 import com.example.lezhin.domain.user.enums.Gender;
 import com.example.lezhin.domain.user.enums.Type;

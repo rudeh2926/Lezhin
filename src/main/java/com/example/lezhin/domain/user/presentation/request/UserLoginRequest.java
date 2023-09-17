@@ -1,4 +1,4 @@
-package com.example.lezhin.domain.user.presentation.dto;
+package com.example.lezhin.domain.user.presentation.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

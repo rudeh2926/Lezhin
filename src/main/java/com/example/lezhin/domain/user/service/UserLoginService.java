@@ -1,7 +1,7 @@
 package com.example.lezhin.domain.user.service;
 
 import com.example.lezhin.domain.user.exception.UserEmailNotFoundException;
-import com.example.lezhin.domain.user.presentation.dto.UserLoginRequest;
+import com.example.lezhin.domain.user.presentation.request.UserLoginRequest;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.domain.repository.UserRepository;
 import com.example.lezhin.domain.user.exception.PasswordMissMatch;
