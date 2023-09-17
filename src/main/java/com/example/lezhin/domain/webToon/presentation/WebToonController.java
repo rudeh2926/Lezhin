@@ -1,12 +1,14 @@
 package com.example.lezhin.domain.webToon.presentation;
 
 import com.example.lezhin.domain.webToon.presentation.dto.request.ModifyPaidRequest;
-import com.example.lezhin.domain.webToon.service.ModifyPaidService;
-import com.example.lezhin.domain.webToon.service.WriteWebToonService;
+import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonResponse;
+import com.example.lezhin.domain.webToon.service.*;
 import com.example.lezhin.domain.webToon.presentation.dto.request.WriteWebToonRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/webtoon")
@@ -15,6 +17,7 @@ public class WebToonController {
 
     private final WriteWebToonService writeWebToonService;
     private final ModifyPaidService modifyPaidService;
+    private final BestWebToonService bestWebToonService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -25,5 +28,10 @@ public class WebToonController {
     @PatchMapping
     public void modifyWebToon(ModifyPaidRequest modifyPaidRequest) {
         modifyPaidService.modifyWebToonPaid(modifyPaidRequest);
+    }
+
+    @GetMapping("/best")
+    public List<WebToonResponse> findBestWebToon() {
+        return bestWebToonService.findBestWebToon();
     }
 }
