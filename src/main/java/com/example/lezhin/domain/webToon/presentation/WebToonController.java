@@ -1,7 +1,7 @@
 package com.example.lezhin.domain.webToon.presentation;
 
 import com.example.lezhin.domain.webToon.presentation.dto.request.ModifyPaidRequest;
-import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonResponse;
+import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonListResponse;
 import com.example.lezhin.domain.webToon.service.*;
 import com.example.lezhin.domain.webToon.presentation.dto.request.WriteWebToonRequest;
 import lombok.RequiredArgsConstructor;
@@ -32,12 +32,12 @@ public class WebToonController {
     }
 
     @GetMapping("/best")
-    public List<WebToonResponse> findBestWebToon() {
+    public List<WebToonListResponse> findBestWebToon() {
         return bestWebToonService.findBestWebToon();
     }
 
     @GetMapping("/worst")
-    public List<WebToonResponse> findWorstWevbToon() {
+    public List<WebToonListResponse> findWorstWevbToon() {
         return worstWebToonService.findWorstWebToon();
     }
 }

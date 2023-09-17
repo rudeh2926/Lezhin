@@ -4,7 +4,7 @@ import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.webToon.domain.WebToon;
 import com.example.lezhin.domain.webToon.domain.repository.WebToonRepositoryImp;
-import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonResponse;
+import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,14 +20,14 @@ public class WorstWebToonService {
     private final WebToonRepositoryImp webToonRepositoryImp;
 
     @Transactional(readOnly = true)
-    public List<WebToonResponse> findWorstWebToon() {
+    public List<WebToonListResponse> findWorstWebToon() {
 
         User user = userFacade.getCurrentUser();
 
         List<WebToon> findWorstWebToon = webToonRepositoryImp.findMostDisLikedWebtoons();
-        List<WebToonResponse> findWorstWebToons = findWorstWebToon
+        List<WebToonListResponse> findWorstWebToons = findWorstWebToon
                 .stream()
-                .map(WebToonResponse::new)
+                .map(WebToonListResponse::new)
                 .collect(Collectors.toList());
 
         return findWorstWebToons;

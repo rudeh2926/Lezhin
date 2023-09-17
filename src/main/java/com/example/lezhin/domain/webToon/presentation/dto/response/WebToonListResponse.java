@@ -6,11 +6,11 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class WebToonResponse {
+public class WebToonListResponse {
     private String title;
     private String content;
 
-    public WebToonResponse(WebToon webToon) {
+    public WebToonListResponse(WebToon webToon) {
         this.title = webToon.getTitle();
         this.content = webToon.getContent();
     }

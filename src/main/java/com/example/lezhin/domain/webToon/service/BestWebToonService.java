@@ -4,7 +4,7 @@ import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.webToon.domain.WebToon;
 import com.example.lezhin.domain.webToon.domain.repository.WebToonRepositoryImp;
-import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonResponse;
+import com.example.lezhin.domain.webToon.presentation.dto.response.WebToonListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,14 +20,14 @@ public class BestWebToonService {
     private final WebToonRepositoryImp webToonRepositoryImp;
 
     @Transactional(readOnly = true)
-    public List<WebToonResponse> findBestWebToon() {
+    public List<WebToonListResponse> findBestWebToon() {
 
         User user = userFacade.getCurrentUser();
 
         List<WebToon> findBestWebToon = webToonRepositoryImp.findMostLikedWebtoons();
-        List<WebToonResponse> findBestWebToons = findBestWebToon
+        List<WebToonListResponse> findBestWebToons = findBestWebToon
                 .stream()
-                .map(WebToonResponse::new)
+                .map(WebToonListResponse::new)
                 .collect(Collectors.toList());
 
         return findBestWebToons;
