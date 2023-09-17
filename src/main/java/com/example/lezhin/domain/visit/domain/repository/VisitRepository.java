@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface VisitRepository extends JpaRepository<Visit, Long> {
    List<Visit> findByWebToonId(WebToon webToon);
-   boolean existsByUserNameAndWebToon(User user, WebToon webToon);
+   boolean existsByUserAndWebToon(User user, WebToon webToon);
 
    List<Visit> deleteVisitByUserAndWebToon(User user, WebToon webToon);
 }

@@ -27,7 +27,7 @@ public class FindWebToonService {
         User user = userFacade.getCurrentUser();
         WebToon webToon = webToonFacade.getWebToonById(webToonId);
 
-        if (visitRepository.existsByUserNameAndWebToon(user, webToon)) {
+        if (visitRepository.existsByUserAndWebToon(user, webToon)) {
             visitRepository.deleteVisitByUserAndWebToon(user, webToon);
         }
 
