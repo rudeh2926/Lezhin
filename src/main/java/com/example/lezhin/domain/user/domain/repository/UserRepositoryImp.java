@@ -27,14 +27,14 @@ public class UserRepositoryImp implements UserRepositoryCustom {
                 .where(
                         user.in(
                                 jpaQueryFactory
-                                        .select(visit.user)
-                                        .from(visit)
-                                        .join(visit.webToon, webToon)
+                                        .select(user)
+                                        .from(user)
+                                        .join(user.visit, visit)
                                         .on(visit.visitDateTime.after(oneWeekAgo))
                                         .where(
                                                 webToon.webToonType.eq(WebToonType.FORADULT).isTrue()
                                         )
-                                        .groupBy(visit.user)
+                                        .groupBy(user.visit)
                                         .having(webToon.id.countDistinct().goe(3))
                                 )
                          )
