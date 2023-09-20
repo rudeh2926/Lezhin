@@ -1,6 +1,7 @@
 package com.example.lezhin.domain.user.service;
 
 import com.example.lezhin.domain.user.exception.UserEmailNotFoundException;
+import com.example.lezhin.domain.user.facade.UserFacade;
 import com.example.lezhin.domain.user.presentation.request.UserLoginRequest;
 import com.example.lezhin.domain.user.domain.User;
 import com.example.lezhin.domain.user.domain.repository.UserRepository;
@@ -16,13 +17,12 @@ import org.springframework.stereotype.Service;
 public class UserLoginService {
 
     private final JwtProvider jwtProvider;
-    private final UserRepository userRepository;
+    private final UserFacade userFacade;
     private final PasswordEncoder passwordEncoder;
 
     public TokenResponse login(UserLoginRequest userLoginRequest) {
 
-        User user = userRepository.findByUserEmail(userLoginRequest.getUserEmail())
-                .orElseThrow(()-> UserEmailNotFoundException.EXCEPTION);
+        User user = userFacade.getUserByEmail(userLoginRequest.getUserEmail());
 
         if (passwordEncoder.matches(userLoginRequest.getPassword(), user.getPassword())) {
             throw PasswordMissMatch.EXCEPTION;
