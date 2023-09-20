@@ -17,16 +17,16 @@ public class UserController {
     private final UserSignupService userSignupService;
     private final UserDeleteService userDeleteService;
     private final FindUserWithAdultWebToonService findUserWithAdultWebToonService;
+    @P=
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void signup(UserSignupRequest userSignupRequest) {
+    public void signup(@RequestBody UserSignupRequest userSignupRequest) {
         userSignupService.signup(userSignupRequest);
     }
 
     @DeleteMapping
-    public void deleteUser(String password) {
-        userDeleteService.deleteUser(password);
+    public void deleteUser(@RequestBody String password) {userDeleteService.deleteUser(password);
     }
 
 
