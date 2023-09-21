@@ -24,7 +24,7 @@ public class UserLoginService {
 
         User user = userFacade.getUserByEmail(userLoginRequest.getUserEmail());
 
-        if (passwordEncoder.matches(userLoginRequest.getPassword(), user.getPassword())) {
+        if (passwordEncoder.matches(user.getPassword(), userLoginRequest.getPassword())) {
             throw PasswordMissMatch.EXCEPTION;
         }
 

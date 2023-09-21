@@ -31,13 +31,10 @@ public class UserRepositoryImp implements UserRepositoryCustom {
                                         .from(user)
                                         .join(user.visit, visit)
                                         .on(visit.visitDateTime.after(oneWeekAgo))
-                                        .where(
-                                                webToon.webToonType.eq(WebToonType.FORADULT).isTrue()
-                                        )
-                                        .groupBy(user.visit)
-                                        .having(webToon.id.countDistinct().goe(3))
-                                )
-                         )
+                                        .groupBy(user)
+                                        .having(webToon.webToonType.eq(WebToonType.FORADULT).countDistinct().goe(3))
+                        )
+                )
                 .fetch();
     }
 }

@@ -24,12 +24,12 @@ public class WebToonController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void writeWebToon(WriteWebToonRequest writeWebToonRequest) {
+    public void writeWebToon(@RequestBody WriteWebToonRequest writeWebToonRequest) {
         writeWebToonService.writeWebToon(writeWebToonRequest);
     }
 
     @PatchMapping
-    public void modifyWebToon(ModifyPaidRequest modifyPaidRequest) {
+    public void modifyWebToon(@RequestBody ModifyPaidRequest modifyPaidRequest) {
         modifyPaidService.modifyWebToonPaid(modifyPaidRequest);
     }
 
